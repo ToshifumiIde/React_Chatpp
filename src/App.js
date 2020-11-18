@@ -1,6 +1,6 @@
 import React from "react";
 import Login from "./Login";
-import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 import Room from "./Room";
 import {
   BrowserRouter as Router,
@@ -13,10 +13,10 @@ import {
 const App = () =>{
   return(
     <>
-    <h1>こんにちは！</h1>
+    <h1>ChatRoom</h1>
     <Router>
       <Switch>
-        <Route exact path="/" component={SignIn} />
+        <Route exact path="/" component={SignUp} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/room" component={Room} />
     </Switch>
