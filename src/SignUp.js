@@ -1,4 +1,5 @@
-import React , {useState} from "react";
+import React , {useState} from "react";//reactパッケージのインストール
+import {Link} from "react-router-dom";
 import firebase from "./config/firebase";
 
 const SignUp =()=>{
@@ -9,7 +10,10 @@ const SignUp =()=>{
 
   const handleSubmit = (e) => {
       e.preventDefault();
-      firebase.auth().createUserWithEmailAndPassword(email , password).catch(err =>{
+      firebase.auth().createUserWithEmailAndPassword(email , password).then(()=>{
+        console.log("Signup Succeeded!");
+      })
+      .catch(err =>{
         console.log(err);
       });
       if(!user || !email || !password){

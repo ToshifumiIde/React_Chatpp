@@ -1,5 +1,6 @@
-import React , {useState} from "react";//reactパッケージのインストール
+import React , { useState , useEffect } from "react";//reactパッケージのインストール
 import styled from "styled-components";
+import firebase from "../src/config/firebase";
 
 const Room =()=> {
   
@@ -35,6 +36,7 @@ const Room =()=> {
   return(
   <RoomContainer>
     <h2>Room</h2>
+  <p>Logged In User:{user ? user.email : "...Loading"}</p>
         <ul>
         {
           messages.map((message , index) => {

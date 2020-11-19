@@ -9,7 +9,10 @@ const Login =()=>{
 
   const handleSubmit =(e)=>{
     e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(email , password).catch(err =>{
+    firebase.auth().signInWithEmailAndPassword(email , password).then(()=>{
+      console.log("Login Succeeded!")
+    })
+    .catch(err =>{
       console.log(err);
     })
   };
